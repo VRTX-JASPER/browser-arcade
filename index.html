@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101522">
+  <title>Browser Arcade — Play in Your Browser</title>
+  <meta name="description" content="Browse browser-ready games and PSP homebrew projects.">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Browser Arcade home">
+      <span class="brand-icon">BA</span>
+      <span>Browser<span class="brand-accent">Arcade</span></span>
+    </a>
+    <nav>
+      <a href="#library">Library</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR BROWSER. YOUR GAMES.</span>
+        <h1>Press play.<br><span>Enter another world.</span></h1>
+        <p>
+          Explore games and discover projects built to run
+          directly in your browser. No separate app installation.
+        </p>
+        <a class="primary-button" href="#library">Explore the library <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-console">
+          <div class="console-screen">
+            <span>YOUR NEXT</span>
+            <strong>ADVENTURE</strong>
+            <div class="screen-symbol">▶</div>
+          </div>
+          <div class="console-controls">
+            <span class="dpad">✣</span>
+            <span class="console-center">BROWSER<br>ARCADE</span>
+            <span class="face-buttons">●<br>● ●</span>
+          </div>
+        </div>
+        <span class="floating-star">✦</span>
+        <span class="floating-dot"></span>
+      </div>
+    </section>
+
+    <section class="library section" id="library">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE COLLECTION</span>
+          <h2>Game library</h2>
+          <p class="muted">Find a game to explore.</p>
+        </div>
+        <span class="library-count" id="game-count">0 games</span>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="search" type="search"
+            placeholder="Search games..." autocomplete="off">
+        </label>
+        <label class="filter-label" for="category">Platform</label>
+        <select id="category">
+          <option value="all">All platforms</option>
+          <option value="PSP">PSP</option>
+          <option value="Browser">Browser games</option>
+        </select>
+      </div>
+
+      <div class="filters" aria-label="Game filters">
+        <button class="filter active" data-filter="all">All games</button>
+        <button class="filter" data-filter="ready">Browser-ready</button>
+        <button class="filter" data-filter="planned">Coming soon</button>
+      </div>
+
+      <div id="game-grid" class="game-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="about section" id="about">
+      <span class="eyebrow">BUILT FOR THE WEB</span>
+      <h2>Your games, one library.</h2>
+      <p>
+        Browser Arcade is a game-library project. Compatible games
+        can run inside the browser when the correct player is available.
+        Console emulation, game compatibility, and game-file permissions
+        are handled separately.
+      </p>
+      <div class="feature-grid">
+        <article class="feature">
+          <span class="feature-icon">⌕</span>
+          <h3>Easy discovery</h3>
+          <p>Search and filter the collection.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-icon">▣</span>
+          <h3>Browser-based</h3>
+          <p>No separate game-player installation for supported games.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-icon">＋</span>
+          <h3>Expandable</h3>
+          <p>Add new entries as your library grows.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#">Browser<span class="brand-accent">Arcade</span></a>
+    <p>Independent browser gaming project.</p>
+    <p>Only distribute games and files you have permission to share.</p>
+  </footer>
+
+  <dialog id="game-dialog" class="game-dialog">
+    <button id="close-dialog" class="close-button"
+      aria-label="Close game details">✕</button>
+    <div id="dialog-content"></div>
+  </dialog>
+</body>
+</html>
